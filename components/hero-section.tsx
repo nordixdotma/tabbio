@@ -27,7 +27,7 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
             {/* Left Column: Content */}
             <div className="flex flex-col justify-center text-center md:text-left">
-              <h1 className="mb-3 md:mb-4 text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold tracking-tight text-gray-900">
+              <h1 className="mb-3 md:mb-4 text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold tracking-tighter text-gray-900">
                 Your link-in-bio,
                 <br />
                 now with a brain

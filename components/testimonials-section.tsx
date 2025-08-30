@@ -163,6 +163,10 @@ export default function TestimonialsSection() {
 
   return (
     <section id="testimonials" className="py-10 sm:py-16 md:py-24 relative overflow-hidden bg-white">
+      {/* Add blur shadow overlay */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_0%,transparent_70%)] w-full h-full" />
+      </div>
       <div className="max-w-7xl mx-auto px-2 md:px-4 relative z-10">
         <SectionTitle title="See what people are saying" />
 

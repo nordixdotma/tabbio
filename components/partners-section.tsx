@@ -69,7 +69,7 @@ export default function PartnersSection() {
   return (
     <section className="py-12 relative">
       <div className="text-center mb-8">
-        <h2 className="text-4xl md:text-6xl font-semibold text-gray-900">Loved by top creators</h2>
+        <h2 className="text-4xl md:text-6xl font-medium text-gray-900 tracking-tight">Loved by top creators</h2>
       </div>
 
       <div className="w-full relative overflow-hidden">
