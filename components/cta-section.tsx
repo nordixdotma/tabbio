@@ -21,7 +21,7 @@ export default function CtaSection() {
         </h2>
 
         <div className="relative w-full max-w-lg mx-auto mt-10">
-          <div className="text-lg md:text-2xl absolute left-6 top-4 text-gray-900 font-medium">bio.link/</div>
+          <div className="text-2xl absolute left-6 top-4 text-gray-900 font-medium">bio.link/</div>
           <input
             type="text"
             name="slug"
