@@ -1,6 +1,4 @@
 "use client"
-
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -168,24 +166,71 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Social Links */}
-          <div className="flex space-x-5">
-            <Link href="#" className="opacity-80 hover:opacity-100 transition-opacity">
-              <span className="sr-only">Twitter</span>
-              <Twitter className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="opacity-80 hover:opacity-100 transition-opacity">
-              <span className="sr-only">LinkedIn</span>
-              <Linkedin className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="opacity-80 hover:opacity-100 transition-opacity">
-              <span className="sr-only">Facebook</span>
-              <Facebook className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="opacity-80 hover:opacity-100 transition-opacity">
-              <span className="sr-only">Instagram</span>
-              <Instagram className="h-6 w-6" />
-            </Link>
+          <div className="flex items-center gap-8">
+
+            {/* Social Links with provided SVGs */}
+            <div className="flex justify-center gap-8 max-md:gap-6">
+              <a href="" target="_blank" className="hover:scale-105 duration-75 ease-out" rel="noreferrer">
+                <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    className="fill-dark"
+                    d="M2.01611 3.21881H9.69628L16.7953 12.7678L25.6317 3L27.7313 3.03647L17.842 14.1415L27.9839 27.7812H20.3067L13.6064 18.8826L5.42107 28H3.35497L12.59 17.5818L2.01611 3.21881ZM8.97209 4.62898H4.91596L21.1435 26.3345H25.1266L8.97209 4.62898Z"
+                    fill="#222222"
+                  ></path>
+                </svg>
+              </a>
+              <a href="" target="_blank" className="hover:scale-105 duration-75 ease-out" rel="noreferrer">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    className="stroke-dark"
+                    d="M22 7H24M9 1H21C25.4183 1 29 4.58172 29 9V21C29 25.4183 25.4183 29 21 29H9C4.58172 29 1 25.4183 1 21V9C1 4.58172 4.58172 1 9 1ZM15 21C11.6863 21 9 18.3137 9 15C9 11.6863 11.6863 9 15 9C18.3137 9 21 11.6863 21 15C21 18.3137 18.3137 21 15 21Z"
+                    stroke="#0D0C22"
+                    strokeWidth="1.5"
+                  ></path>
+                </svg>
+              </a>
+              <a href="" target="_blank" className="hover:scale-105 duration-75 ease-out" rel="noreferrer">
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    className="stroke-dark"
+                    d="M30.372 9.26956C30.21 8.62242 29.8801 8.02949 29.4157 7.55065C28.9512 7.07182 28.3686 6.72403 27.7267 6.54242C25.3813 5.96973 16 5.96973 16 5.96973C16 5.96973 6.61867 5.96973 4.27334 6.59697C3.63143 6.77857 3.04882 7.12636 2.58435 7.6052C2.11988 8.08403 1.79 8.67696 1.62802 9.3241C1.19879 11.7043 0.988829 14.1188 1.00078 16.5374C0.985479 18.9741 1.19545 21.4071 1.62802 23.8052C1.80659 24.4322 2.14387 25.0026 2.60726 25.4612C3.07065 25.9198 3.64449 26.2511 4.27334 26.4232C6.61867 27.0505 16 27.0504 16 27.0504C16 27.0504 25.3813 27.0505 27.7267 26.4232C28.3686 26.2416 28.9512 25.8938 29.4157 25.415C29.8801 24.9361 30.21 24.3432 30.372 23.6961C30.7979 21.3338 31.0078 18.9377 30.9992 16.5374C31.0145 14.1006 30.8046 11.6677 30.372 9.26956V9.26956Z"
+                    stroke="#0D0C22"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    className="stroke-dark"
+                    d="M12.9316 20.9971L20.7721 16.5382L12.9316 12.0793V20.9971Z"
+                    stroke="#0D0C22"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </a>
+              <a href="" target="_blank" className="hover:scale-105 duration-75 ease-out" rel="noreferrer">
+                <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    className="stroke-dark"
+                    d="M17.5172 1.96973V23.2111C17.5172 26.9438 14.4913 29.9697 10.7586 29.9697C7.02594 29.9697 4 26.9438 4 23.2111C4 19.4784 7.02594 16.4525 10.7586 16.4525M26.2069 12.5904C21.4077 12.5904 17.5172 8.69993 17.5172 3.90076"
+                    stroke="#0D0C22"
+                    strokeWidth="1.5"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            {/* Logo */}
+            <div className="h-9 w-auto">
+              <Image
+                src="/logo.png"
+                alt="Tabbio"
+                width={120}
+                height={48}
+                className="h-full w-auto object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
 

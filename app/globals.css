@@ -69,6 +69,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    overscroll-behavior: none; /* Updated scrollbar behavior for body */
   }
 }
 
@@ -180,6 +181,7 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none; /* Updated scrollbar behavior for html */
 }
 
 /* Custom scrollbar */
@@ -192,10 +194,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff4500; /* Updated scrollbar color to match new primary color */
+  background: #542eff; /* Updated scrollbar color to #542eff */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e63e00; /* Updated scrollbar hover color to darker orange */
+  background: #4a26e6; /* Updated scrollbar hover color to darker shade of #542eff */
 }

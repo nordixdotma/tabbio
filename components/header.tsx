@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion"
+import { AnimatePresence, motion, useScroll } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -16,15 +16,7 @@ export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null)
 
   const { scrollY } = useScroll()
-  const [visible, setVisible] = useState(false)
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 100) {
-      setVisible(true)
-    } else {
-      setVisible(false)
-    }
-  })
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -64,7 +56,7 @@ export default function Header() {
       <motion.div
         animate={{
           backdropFilter: visible ? "blur(10px)" : "none",
-          boxShadow: visible ? "0 0 24px rgba(34, 111, 211, 0.1), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
+          boxShadow: visible ? "0 0 24px rgba(34, 111, 211, 0.15), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
           width: visible ? "85%" : "100%",
           y: visible ? 20 : 0,
           backgroundColor: visible ? "white" : "transparent",
@@ -140,7 +132,7 @@ export default function Header() {
       <motion.div
         animate={{
           backdropFilter: visible ? "blur(10px)" : "none",
-          boxShadow: visible ? "0 0 24px rgba(34, 111, 211, 0.1), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
+          boxShadow: visible ? "0 0 24px rgba(34, 111, 211, 0.15), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
           width: visible ? "90%" : "100%",
           paddingRight: visible ? "12px" : "16px",
           paddingLeft: visible ? "12px" : "16px",
@@ -195,7 +187,7 @@ export default function Header() {
 
               <motion.div
                 ref={menuRef}
-                className="absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-card/90 backdrop-blur-md px-4 py-8 shadow-lg border border-border"
+                className="absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white backdrop-blur-md px-4 py-8 shadow-lg border border-border"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
