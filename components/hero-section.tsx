@@ -114,7 +114,7 @@ export default function HeroSection() {
             <div ref={rightColumnRef} className="flex justify-center md:justify-end relative">
               <div className="flip-container">
                 <div
-                  className={`flip-card relative w-full max-w-[350px] lg:max-w-[450px] rounded-lg overflow-hidden cursor-pointer ${isFlipping ? "flipping" : ""}`}
+                  className={`flip-card relative w-full max-w-[350px] lg:max-w-[500px] rounded-lg overflow-hidden cursor-pointer ${isFlipping ? "flipping" : ""}`}
                   onClick={handleImageClick}
                   style={{
                     transform: `
