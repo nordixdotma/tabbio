@@ -49,7 +49,7 @@ const TestimonialsColumn = (props: {
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, country }, i) => (
                 <div
-                  className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm max-w-sm w-full relative"
+                  className="p-4 rounded-2xl border-2 border-gray-200 bg-white shadow-sm max-w-sm w-full relative"
                   key={i}
                 >
                   {/* Google-style header */}

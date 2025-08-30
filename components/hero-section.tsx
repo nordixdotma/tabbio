@@ -1,10 +1,17 @@
 "use client"
 import Image from "next/image"
-import { useState } from "react"
+import type React from "react"
+
+import { useState, useRef } from "react"
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isFlipping, setIsFlipping] = useState(false)
+  const [rotateY, setRotateY] = useState(0)
+  const [rotateX, setRotateX] = useState(0)
+  const [rotateZ, setRotateZ] = useState(0)
+  const rightColumnRef = useRef<HTMLDivElement>(null)
+  const heroSectionRef = useRef<HTMLDivElement>(null)
 
   const heroImages = [
     "https://bio.link/_nuxt/hero1.DbxcVcFn.png",
@@ -12,20 +19,66 @@ export default function HeroSection() {
     "https://bio.link/_nuxt/hero3.BGcjPcm6.png",
   ]
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!rightColumnRef.current || !heroSectionRef.current || isFlipping) return
+
+    const rect = rightColumnRef.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+
+    const mouseX = e.clientX
+    const mouseY = e.clientY
+
+    const rotationStrength = 15
+    const rotateYValue = ((mouseX - centerX) / (rect.width / 2)) * rotationStrength
+    const rotateXValue = -((mouseY - centerY) / (rect.height / 2)) * rotationStrength
+    const rotateZValue = ((mouseX - centerX) / (rect.width / 2)) * 5
+
+    setRotateY(rotateYValue)
+    setRotateX(rotateXValue)
+    setRotateZ(rotateZValue)
+  }
+
   const handleImageClick = () => {
     setIsFlipping(true)
+    setRotateY((prev) => prev + 180)
+
     setTimeout(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
       setIsFlipping(false)
-    }, 150)
+    }, 400)
   }
 
   return (
-    <section className="relative pt-16 md:pt-20 md:min-h-screen mt-12 md:mt-0 flex flex-col bg-white">
+    <section
+      ref={heroSectionRef}
+      className="relative pt-16 md:pt-20 md:min-h-screen mt-12 md:mt-0 flex flex-col bg-white"
+      onMouseMove={handleMouseMove}
+    >
+      <style jsx>{`
+        .flip-container {
+          perspective: 1000px;
+        }
+        
+        .flip-card {
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 0.1s ease-out;
+        }
+        
+        .flip-card.flipping {
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-face {
+          backface-visibility: hidden;
+          transition: opacity 0.3s ease-in-out;
+        }
+      `}</style>
+
       <div className="mx-auto max-w-6xl px-4 flex-1 flex flex-col">
         <div className="flex flex-col justify-center flex-1">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
-            {/* Left Column: Content */}
             <div className="flex flex-col justify-center text-center md:text-left">
               <h1 className="mb-3 md:mb-4 text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold tracking-tighter text-gray-900">
                 Your link-in-bio,
@@ -58,24 +111,31 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Right Column: Clickable flipping images */}
-            <div className="flex justify-center md:justify-end relative">
-              <div
-                className="relative w-full max-w-[350px] lg:max-w-[450px] rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105"
-                onClick={handleImageClick}
-                style={{
-                  transform: isFlipping ? "rotateY(180deg)" : "rotateY(0deg)",
-                  backfaceVisibility: "hidden",
-                }}
-              >
-                <Image
-                  src={heroImages[currentImageIndex] || "/placeholder.svg"}
-                  alt={`Hero image ${currentImageIndex + 1}`}
-                  width={500}
-                  height={400}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
+            <div ref={rightColumnRef} className="flex justify-center md:justify-end relative">
+              <div className="flip-container">
+                <div
+                  className={`flip-card relative w-full max-w-[350px] lg:max-w-[450px] rounded-lg overflow-hidden cursor-pointer ${isFlipping ? "flipping" : ""}`}
+                  onClick={handleImageClick}
+                  style={{
+                    transform: `
+                      rotateY(${rotateY}deg) 
+                      rotateX(${rotateX}deg) 
+                      rotateZ(${rotateZ}deg)
+                      ${isFlipping ? "scale(1.05)" : "scale(1)"}
+                    `,
+                  }}
+                >
+                  <div className="card-face">
+                    <Image
+                      src={heroImages[currentImageIndex] || "/placeholder.svg"}
+                      alt={`Hero image ${currentImageIndex + 1}`}
+                      width={500}
+                      height={400}
+                      className="w-full h-auto object-contain"
+                      priority
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

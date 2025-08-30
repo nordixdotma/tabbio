@@ -27,7 +27,7 @@ export default function CtaSection() {
             name="slug"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="bg-gray-100 text-gray-900 placeholder-gray-400 focus:border-gray-300 w-full rounded-full h-16 font-normal text-2xl pl-28 pr-40 focus:outline-none focus:ring-0"
+            className="bg-[#f4f4f4] text-gray-900 placeholder-gray-400 focus:border-gray-300 w-full rounded-full h-16 font-normal text-2xl pl-28 pr-40 focus:outline-none focus:ring-0"
             id="slug"
             placeholder="name"
           />

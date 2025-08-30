@@ -67,7 +67,7 @@ const partnerLogos = [
 
 export default function PartnersSection() {
   return (
-    <section className="py-12 relative">
+    <section className="py-12 md:pt-16 relative">
       <div className="text-center mb-8">
         <h2 className="text-4xl md:text-6xl font-medium text-gray-900 tracking-tight">Loved by top creators</h2>
       </div>
