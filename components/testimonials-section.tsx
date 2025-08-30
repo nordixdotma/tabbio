@@ -12,11 +12,11 @@ function SectionTitle({ title, subtitle }: SectionTitleProps) {
   return (
     <div className="text-center mb-10 md:mb-16">
       <div className="flex justify-center mb-4">
-        <span className="inline-flex items-center px-4 py-2 rounded-full border-2 border-black text-black text-sm font-medium">
+        <span className="inline-flex items-center px-4 py-1 rounded-full border-2 border-black text-black text-sm font-medium">
           Testimonials
         </span>
       </div>
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl md:text-5xl mb-4">
+      <h2 className="text-2xl font-medium tracking-tight text-gray-900 sm:text-3xl md:text-6xl mb-4">
         See what people
         <br />
         are saying

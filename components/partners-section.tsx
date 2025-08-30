@@ -69,7 +69,7 @@ export default function PartnersSection() {
   return (
     <section className="pb-4 relative">
       <div className="text-center mb-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Trusted by professionals</h2>
+        <h2 className="text-4xl md:text-6xl font-semibold text-gray-900">Loved by top creators</h2>
       </div>
 
       <div className="w-full relative">

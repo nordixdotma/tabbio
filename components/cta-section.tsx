@@ -14,7 +14,7 @@ export default function CtaSection() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-12 leading-tight">
+        <h2 className="text-4xl md:text-6xl font-semibold text-gray-900 mb-12 leading-tight">
           Claim your bio link
           <br />
           before it's taken
@@ -27,7 +27,7 @@ export default function CtaSection() {
             name="slug"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="bg-gray-100 text-gray-900 placeholder-gray-400 focus:border-gray-300 w-full rounded-full h-16 font-medium text-2xl pl-28 pr-40 focus:outline-none focus:ring-0"
+            className="bg-gray-100 text-gray-900 placeholder-gray-400 focus:border-gray-300 w-full rounded-full h-16 font-normal text-2xl pl-28 pr-40 focus:outline-none focus:ring-0"
             id="slug"
             placeholder="name"
           />

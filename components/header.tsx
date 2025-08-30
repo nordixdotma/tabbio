@@ -83,9 +83,9 @@ export default function Header() {
         }`}
       >
         <Link href="/" className="relative z-20 mr-4 flex items-center px-2 py-1">
-          <div className="h-12 w-auto">
+          <div className="h-10 w-auto">
             <Image
-              src="/whitelogo.png"
+              src="/logo.png"
               alt="Tabbio"
               width={120}
               height={48}
@@ -97,7 +97,7 @@ export default function Header() {
 
         <motion.div
           onMouseLeave={() => setHovered(null)}
-          className="hidden flex-row items-center space-x-1 text-base font-medium lg:flex ml-8"
+          className="hidden flex-row items-center space-x-1 text-base font-medium lg:flex ml-4"
         >
           {navItems.map((item, idx) => (
             <div key={`nav-item-${idx}`} className="relative">
@@ -163,7 +163,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <div className="h-10 w-auto">
               <Image
-                src="/whitelogo.png"
+                src="/logo.png"
                 alt="Tabbio"
                 width={100}
                 height={40}

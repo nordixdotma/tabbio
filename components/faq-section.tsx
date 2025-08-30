@@ -61,10 +61,10 @@ export default function FaqSection() {
     <section id="faq" className="py-10 sm:py-16 md:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-8 md:mb-12 text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full border-2 border-black mb-4">
+          <div className="inline-flex items-center px-4 py-1 rounded-full border-2 border-black mb-4">
             <span className="text-sm font-medium text-black">FAQ</span>
           </div>
-          <h3 className="text-2xl font-bold tracking-tight text-black sm:text-3xl md:text-5xl mb-4">Got questions?</h3>
+          <h3 className="text-2xl font-medium tracking-tight text-black sm:text-3xl md:text-7xl mb-4">Got questions?</h3>
         </div>
 
         <div ref={faqRef} className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">

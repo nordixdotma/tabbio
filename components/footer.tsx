@@ -147,23 +147,23 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-8 md:py-16">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
           {/* App Store Images */}
-          <div className="flex gap-4">
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+          <div className="flex gap-2">
+            <Link href="#">
               <Image
                 src="/get-it-on-google-play-button.png"
                 alt="Get it on Google Play"
                 width={140}
                 height={42}
-                className="h-10 w-auto filter brightness-0"
+                className="h-12 w-auto"
               />
             </Link>
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+            <Link href="#">
               <Image
                 src="/download-app-store-button.png"
                 alt="Download on the App Store"
                 width={140}
                 height={42}
-                className="h-10 w-auto filter brightness-0"
+                className="h-12 w-auto"
               />
             </Link>
           </div>
