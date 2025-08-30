@@ -16,7 +16,7 @@ function SectionTitle({ title, subtitle }: SectionTitleProps) {
           Testimonials
         </span>
       </div>
-      <h2 className="text-2xl font-medium tracking-tight text-gray-900 sm:text-3xl md:text-6xl mb-4">
+      <h2 className="text-2xl font-medium tracking-tight text-gray-900 md:text-6xl mb-4">
         See what people
         <br />
         are saying
