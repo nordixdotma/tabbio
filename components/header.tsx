@@ -56,10 +56,11 @@ export default function Header() {
       <motion.div
         animate={{
           backdropFilter: visible ? "blur(10px)" : "none",
-          boxShadow: visible ? "0 0 24px rgba(34, 111, 211, 0.15), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
+          boxShadow: visible ? "0 0 24px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
           width: visible ? "85%" : "100%",
-          y: visible ? 20 : 0,
+          y: visible ? 10 : 0,
           backgroundColor: visible ? "white" : "transparent",
+          border: visible ? "0.5px solid rgba(0, 0, 0, 0.1)" : "none",
         }}
         transition={{
           type: "spring",
@@ -75,12 +76,12 @@ export default function Header() {
         }`}
       >
         <Link href="/" className="relative z-20 mr-4 flex items-center px-2 py-1">
-          <div className="h-10 w-auto">
+          <div className="h-12 w-auto">
             <Image
               src="/logo.png"
               alt="Tabbio"
-              width={120}
-              height={48}
+              width={140}
+              height={56}
               className="h-full w-auto object-contain"
               priority
             />
@@ -89,13 +90,13 @@ export default function Header() {
 
         <motion.div
           onMouseLeave={() => setHovered(null)}
-          className="hidden flex-row items-center space-x-1 text-base font-medium lg:flex ml-4"
+          className="hidden flex-row items-center space-x-2 text-lg font-medium lg:flex ml-4"
         >
           {navItems.map((item, idx) => (
             <div key={`nav-item-${idx}`} className="relative">
               <Link
                 onMouseEnter={() => setHovered(idx)}
-                className={`relative px-4 py-2 text-black ${
+                className={`relative px-2 py-2 text-black ${
                   pathname && pathname === item.href ? "font-semibold" : ""
                 } hover:text-black transition-colors`}
                 href={item.href}
@@ -112,7 +113,10 @@ export default function Header() {
         </motion.div>
 
         <div className="hidden md:flex items-center justify-end space-x-4 relative z-30 flex-1">
-          <Link href="/login" className="text-black hover:text-gray-700 transition-colors">
+          <Link
+            href="/login"
+            className="text-lg font-medium text-black hover:text-gray-700 transition-colors px-2 py-1"
+          >
             Log in
           </Link>
           <Button
@@ -122,7 +126,7 @@ export default function Header() {
                 block: "start",
               })
             }}
-            className="bg-black text-white hover:bg-gray-800 transition-all duration-300 rounded-full"
+            className="bg-black text-white hover:bg-gray-800 transition-all duration-300 rounded-full px-5 py-3 text-lg"
           >
             Sign up
           </Button>
@@ -132,12 +136,13 @@ export default function Header() {
       <motion.div
         animate={{
           backdropFilter: visible ? "blur(10px)" : "none",
-          boxShadow: visible ? "0 0 24px rgba(34, 111, 211, 0.15), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
+          boxShadow: visible ? "0 0 24px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05)" : "none",
           width: visible ? "90%" : "100%",
           paddingRight: visible ? "12px" : "16px",
           paddingLeft: visible ? "12px" : "16px",
-          y: visible ? 20 : 0,
+          y: visible ? 10 : 0,
           backgroundColor: visible ? "white" : "transparent",
+          border: visible ? "0.5px solid rgba(0, 0, 0, 0.1)" : "none",
         }}
         style={{
           borderRadius: visible ? "9999px" : "2rem",
@@ -147,26 +152,26 @@ export default function Header() {
           stiffness: 200,
           damping: 50,
         }}
-        className={`relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between px-0 py-2 lg:hidden ${
+        className={`relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between px-2 py-1 lg:hidden ${
           visible ? "bg-white" : "bg-transparent"
         }`}
       >
         <div className="flex w-full flex-row items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="h-10 w-auto">
+            <div className="h-9 w-auto">
               <Image
                 src="/logo.png"
                 alt="Tabbio"
-                width={100}
-                height={40}
+                width={120}
+                height={48}
                 className="h-full w-auto object-contain"
                 priority
               />
             </div>
           </Link>
 
-          <button className="p-2 rounded-full text-black" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button className="p-3 rounded-full text-black" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
@@ -187,10 +192,10 @@ export default function Header() {
 
               <motion.div
                 ref={menuRef}
-                className="absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white backdrop-blur-md px-4 py-8 shadow-lg border border-border"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
+                className="absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white backdrop-blur-md px-4 py-8 shadow-lg"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -10 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <div className="w-full space-y-2">
@@ -204,10 +209,10 @@ export default function Header() {
                     >
                       <Link
                         href={item.href}
-                        className={`flex items-center py-3 px-4 rounded-lg font-medium text-base transition-all ${
+                        className={`flex items-center py-3 px-4 rounded-lg font-medium text-lg transition-all ${
                           pathname && pathname === item.href
-                            ? "bg-primary/20 text-primary"
-                            : "text-foreground hover:bg-primary/10"
+                            ? "bg-primary/20 text-black"
+                            : "text-black hover:bg-gray-100"
                         }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
@@ -220,13 +225,13 @@ export default function Header() {
                 <div className="w-full mt-4 space-y-2">
                   <Link
                     href="/login"
-                    className="block w-full text-center py-2 text-foreground hover:text-primary transition-colors"
+                    className="block w-full text-center py-3 text-lg font-semibold text-black hover:text-gray-700 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Log in
                   </Link>
                   <Button
-                    className="w-full bg-black text-white hover:bg-gray-800 rounded-full"
+                    className="w-full bg-black text-white hover:bg-gray-800 rounded-full py-3 text-lg"
                     onClick={() => {
                       setMobileMenuOpen(false)
                       document.getElementById("services")?.scrollIntoView({

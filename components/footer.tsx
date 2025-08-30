@@ -57,7 +57,7 @@ export default function Footer() {
               y2="-4.43997"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
             <linearGradient
@@ -68,7 +68,7 @@ export default function Footer() {
               y2="-4.43973"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
             <linearGradient
@@ -79,7 +79,7 @@ export default function Footer() {
               y2="-4.43973"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
             <linearGradient
@@ -90,7 +90,7 @@ export default function Footer() {
               y2="-4.43973"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
             <linearGradient
@@ -101,7 +101,7 @@ export default function Footer() {
               y2="-4.43973"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
             <linearGradient
@@ -112,7 +112,7 @@ export default function Footer() {
               y2="-4.43973"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
             <linearGradient
@@ -123,7 +123,7 @@ export default function Footer() {
               y2="-4.43973"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
             <linearGradient
@@ -134,7 +134,7 @@ export default function Footer() {
               y2="-3.70913"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FF5858"></stop>
+              <stop stopColor="#542eff"></stop>
               <stop offset="1" stopColor="#C058FF"></stop>
             </linearGradient>
           </defs>
